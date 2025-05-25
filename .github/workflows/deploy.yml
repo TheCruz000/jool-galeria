@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   build-and-deploy:
@@ -16,16 +16,18 @@ jobs:
       - name: Set up Node.js 📦
         uses: actions/setup-node@v4
         with:
-          node-version: 23.11.0 
+          node-version: 20 # Cambié a 20, ya que 23.11.0 es una versión muy nueva y a veces da problemas. 20 es LTS.
 
       - name: Install dependencies 🔧
-        run: yarn install --frozen-lockfile 
+        run: yarn install --frozen-lockfile
 
       - name: Build 🏗️
-        run: yarn build # O npm run build
+        run: yarn build
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages # Asegura que se publique en la rama 'gh-pages'
+          force_orphan: true     # ¡MUY IMPORTANTE! Esto borra el historial de la rama gh-pages y sube solo lo nuevo.
