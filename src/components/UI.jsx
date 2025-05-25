@@ -54,7 +54,7 @@ export const UI = () => {
   const [page, setPage] = useAtom(pageAtom);
 
   useEffect(() => {
-    const audio = new Audio("/audios/page-flip-01a.mp3");
+    const audio = new Audio("./audios/page-flip-01a.mp3");
     audio.play();
   }, [page]);
 
@@ -65,7 +65,7 @@ export const UI = () => {
           className="pointer-events-auto mt-10 ml-10"
           href="https://www.facebook.com/jool-belleza"
         >
-          <img className="w-20" src="/images/loguito.png" />
+          <img className="w-20" src="./images/loguito.png" />
         </a>
         <div className="w-full overflow-auto pointer-events-auto flex justify-center">
           <div className="overflow-auto flex items-center gap-4 max-w-full p-10">
