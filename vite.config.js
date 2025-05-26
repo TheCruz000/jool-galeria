@@ -1,14 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
   base: '/jool-galeria/',
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+  server: {
+    host: '0.0.0.0' // Para acceder desde la red local
   },
   build: {
     outDir: 'dist',
