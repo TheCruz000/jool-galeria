@@ -67,7 +67,7 @@ pageGeometry.setAttribute(
   new Float32BufferAttribute(skinWeights, 4)
 );
 
-const whiteColor = new Color("white");
+const whiteColor = new Color("white"); 
 const emissiveColor = new Color("darkgoldenrod");
 
 const pageMaterials = [
